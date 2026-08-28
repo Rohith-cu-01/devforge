@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import "./Share.css";
+import "../styles/share.css";
 
 function Share({ shareId }) {
   const [chat, setChat] = useState(null);

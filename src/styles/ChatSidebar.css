@@ -1,0 +1,598 @@
+/* =========================================
+   CHAT SIDEBAR
+========================================= */
+
+.chat-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 260px;
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 14px 10px;
+
+  background: #000000;
+  color: #f5f5f5;
+
+  border-right: 1px solid #2a2a2a;
+
+  z-index: 9999;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.chat-sidebar-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.chat-sidebar-brand {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: none;
+  background: transparent;
+
+  color: #f5f5f5;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+.chat-sidebar-brand:hover {
+  background: #1a1a1a;
+}
+
+.chat-sidebar-brand-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-sidebar-logo {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.chat-sidebar-collapse {
+  color: #888;
+  font-size: 20px;
+}
+
+.chat-sidebar-search-button {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  background: transparent;
+
+  color: #aaa;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 22px;
+}
+
+.chat-sidebar-search-button:hover {
+  background: #1a1a1a;
+  color: white;
+}
+
+
+/* =========================================
+   NEW CHAT
+========================================= */
+
+.chat-sidebar-new-chat {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: none;
+  background: transparent;
+
+  color: #f5f5f5;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+  text-align: left;
+
+  margin-bottom: 8px;
+}
+
+.chat-sidebar-new-chat:hover {
+  background: #1a1a1a;
+}
+
+.new-chat-icon {
+  font-size: 21px;
+}
+
+
+/* =========================================
+   MAIN NAVIGATION
+========================================= */
+
+.chat-sidebar-nav {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  margin-bottom: 8px;
+}
+
+.chat-sidebar-nav button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 10px 12px;
+
+  border: none;
+  background: transparent;
+
+  color: #dedede;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  text-align: left;
+}
+
+.chat-sidebar-nav button:hover {
+  background: #1a1a1a;
+  color: white;
+}
+
+.sidebar-nav-icon {
+  width: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   MORE
+========================================= */
+
+.chat-sidebar-more-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.chat-sidebar-more {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 11px 12px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #dedede;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  text-align: left;
+}
+
+.chat-sidebar-more:hover,
+.chat-sidebar-more.active {
+  background: #1f1f1f;
+  color: white;
+}
+
+.more-dots {
+  width: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   MORE MENU
+========================================= */
+
+.chat-sidebar-more-menu {
+  position: absolute;
+
+  left: 0;
+  bottom: calc(100% + 8px);
+
+  width: 220px;
+
+  padding: 7px;
+
+  background: #1f1f1f;
+
+  border: 1px solid #353535;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5);
+
+  z-index: 10000;
+}
+
+.chat-sidebar-more-menu button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #eee;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  text-align: left;
+}
+
+.chat-sidebar-more-menu button:hover {
+  background: #303030;
+}
+
+
+/* =========================================
+   HISTORY
+========================================= */
+
+.chat-sidebar-history {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  margin-top: 12px;
+
+  padding-right: 2px;
+}
+
+.chat-sidebar-history::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-sidebar-history::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-sidebar-history::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.chat-sidebar-search {
+  width: 100%;
+
+  height: 38px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 11px;
+
+  background: #151515;
+
+  border: 1px solid #292929;
+
+  border-radius: 8px;
+
+  margin-bottom: 15px;
+
+  color: #888;
+}
+
+.chat-sidebar-search input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #eee;
+
+  font-size: 13px;
+}
+
+.chat-sidebar-search input::placeholder {
+  color: #777;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.chat-sidebar-section {
+  margin-bottom: 18px;
+}
+
+.chat-sidebar-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5px 8px;
+
+  margin-bottom: 5px;
+
+  color: #858585;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   CHAT ITEM
+========================================= */
+
+.chat-sidebar-chat {
+  width: 100%;
+
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 2px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.chat-sidebar-chat:hover {
+  background: #191919;
+}
+
+.chat-sidebar-chat-active {
+  background: #242424;
+}
+
+.chat-sidebar-chat-title {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 7px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ddd;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-size: 13px;
+}
+
+.chat-sidebar-chat-title:hover {
+  color: white;
+}
+
+.chat-sidebar-chat-icon {
+  flex-shrink: 0;
+
+  font-size: 12px;
+}
+
+.chat-sidebar-chat-name {
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   CHAT ACTIONS
+========================================= */
+
+.chat-sidebar-chat-actions {
+  display: flex;
+  align-items: center;
+
+  padding-right: 4px;
+}
+
+.chat-sidebar-pin,
+.chat-sidebar-delete {
+  width: 28px;
+  height: 28px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.chat-sidebar-pin:hover {
+  background: #303030;
+  color: white;
+}
+
+.chat-sidebar-pin.pinned {
+  color: #f5f5f5;
+}
+
+.chat-sidebar-delete:hover {
+  background: #3a1d1d;
+  color: #ff7777;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.chat-sidebar-empty {
+  padding: 25px 10px;
+
+  text-align: center;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.chat-sidebar-empty span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.chat-sidebar-footer {
+  border-top: 1px solid #222;
+
+  padding-top: 8px;
+
+  margin-top: 8px;
+}
+
+.chat-sidebar-footer button {
+  width: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  padding: 8px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-size: 12px;
+}
+
+.chat-sidebar-footer button:hover {
+  background: #191919;
+
+  color: #ccc;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+  .chat-sidebar {
+    width: 240px;
+  }
+}
